@@ -1,14 +1,14 @@
 #pragma once
 
 #include <napi.h>
-#include <nodegui/Extras/Export/export.h>
+//#include <nodegui/Extras/Export/export.h>
 
 #include <QPointer>
 
 #include "QtCore/QObject/qobject_macro.h"
 #include "nwebchannel.hpp"
 
-class DLL_EXPORT QWebChannelWrap : public Napi::ObjectWrap<QWebChannelWrap> {
+class /*DLL_EXPORT*/ QWebChannelWrap : public Napi::ObjectWrap<QWebChannelWrap> {
   QOBJECT_WRAPPED_METHODS_DECLARATION
  private:
   QPointer<NWebChannel> instance;

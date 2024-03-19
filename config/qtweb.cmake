@@ -10,7 +10,7 @@ macro(AddQtWebSupport addonName)
 
     message(STATUS "Using QT installation for ${addonName} QT_CMAKE_HOME_DIR:${QT_CMAKE_HOME_DIR}")
 
-    set(Qt5_DIR ${QT_CMAKE_HOME_DIR}) 
-    find_package(Qt5 REQUIRED COMPONENTS WebEngine WebEngineCore WebEngineWidgets)
+    set(Qt6_DIR ${QT_CMAKE_HOME_DIR}) 
+    find_package(Qt6 REQUIRED COMPONENTS WebEngineCore WebEngineQuick WebEngineWidgets)
     
 endmacro(AddQtWebSupport addonName)

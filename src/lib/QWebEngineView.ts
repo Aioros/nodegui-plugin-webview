@@ -1,6 +1,6 @@
 import {
   NativeElement,
-  NodeWidget,
+  QWidget,
   QUrl,
   QWidgetSignals
 } from "@nodegui/nodegui";
@@ -17,9 +17,9 @@ export interface QWebEngineViewSignals extends QWidgetSignals {
   titleChanged: (title: string) => void;
 }
 
-export class QWebEngineView extends NodeWidget<QWebEngineViewSignals> {
+export class QWebEngineView extends QWidget<QWebEngineViewSignals> {
   native: NativeElement;
-  constructor(parent?: NodeWidget<any>) {
+  constructor(parent?: QWidget<any>) {
     let native;
     if (parent) {
       native = new addon.QWebEngineView(parent.native);
@@ -28,7 +28,9 @@ export class QWebEngineView extends NodeWidget<QWebEngineViewSignals> {
     }
     super(native);
     this.native = native;
-    this.nodeParent = parent;
+    if (parent)
+      this.setParent(parent);
+    //this.parent = parent;
   }
   load(url: string) {
     this.setProperty("url", url);

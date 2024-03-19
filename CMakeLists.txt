@@ -35,10 +35,10 @@ target_include_directories(${PLUGIN_ADDON_NAME} PRIVATE
 )
 target_link_libraries(${PLUGIN_ADDON_NAME} PRIVATE
     "${CMAKE_JS_LIB}"
-    Qt5::WebEngineCore 
-    Qt5::WebEngineWidgets
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Gui
+    Qt6::WebEngineCore 
+    Qt6::WebEngineWidgets
+    Qt6::Core
+    Qt6::Widgets
+    Qt6::Gui
 )
 

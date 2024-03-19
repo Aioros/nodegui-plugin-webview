@@ -44,7 +44,7 @@ QWebEngineViewWrap::QWebEngineViewWrap(const Napi::CallbackInfo& info)
         .ThrowAsJavaScriptException();
   }
   this->rawData = extrautils::configureQWidget(
-      this->getInternalInstance(), this->getInternalInstance()->getFlexNode(),
+      this->getInternalInstance(), //this->getInternalInstance()->getFlexNode(),
       true);
 }
 

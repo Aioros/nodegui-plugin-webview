@@ -9,7 +9,7 @@ import { QWebChannel } from "./QWebChannel";
 export class QWebEnginePage extends Component {
   native: NativeElement;
   constructor(native: NativeElement) {
-    super();
+    super(native);
     if (checkIfNativeElement(native)) {
       this.native = native;
     } else {

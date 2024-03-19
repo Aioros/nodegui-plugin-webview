@@ -9,7 +9,7 @@ import addon from "./utils/addon";
 export class QWebChannel extends Component {
   native: NativeElement;
   constructor(arg?: NativeElement | QObject) {
-    super();
+    super(arg as NativeElement);
     if (checkIfNativeElement(arg)) {
       this.native = arg as NativeElement;
     } else if (arg instanceof QObject) {

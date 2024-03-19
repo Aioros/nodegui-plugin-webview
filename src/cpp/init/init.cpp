@@ -1,8 +1,8 @@
 #include <napi.h>
-#include <QtWebEngine>
+#include <QtWebEngineQuick>
 
 Napi::Object Main(Napi::Env env, Napi::Object exports) {
-  QtWebEngine::initialize();
+  QtWebEngineQuick::initialize();
   return exports;
 }
 

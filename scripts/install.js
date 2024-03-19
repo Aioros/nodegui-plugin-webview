@@ -15,9 +15,9 @@ const checkIfExists = fullPath => {
 };
 
 function getMiniQtWebviewArtifacts() {
-  if (miniQt.version !== "5.14.1") {
+  if (miniQt.version !== "6.4.1") {
     throw new Error(
-      `Unsupported miniqt version ${miniQt.version}. Please raise an issue ticket on the plugin repo. This plugin only supports miniQt version 5.14.1, the author of the plugin will need to update the download links.`
+      `Unsupported miniqt version ${miniQt.version}. Please raise an issue ticket on the plugin repo. This plugin only supports miniQt version 6.4.1, the author of the plugin will need to update the download links.`
     );
   }
 
@@ -27,35 +27,48 @@ function getMiniQtWebviewArtifacts() {
         artifacts: [
           {
             name: "Qt WebEngine",
-            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt5_5141/qt.qt5.5141.qtwebengine.clang_64/5.14.1-0-202001241000qtwebengine-MacOS-MacOS_10_13-Clang-MacOS-MacOS_10_13-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_641/qt.qt6.641.addons.qtwebengine.clang_64/6.4.1-0-202211101256qtwebengine-MacOS-MacOS_12-Clang-MacOS-MacOS_12-X86_64-ARM64.7z`,
             skipSetup: checkIfExists(
               path.resolve(
                 qtHome,
                 "lib",
                 "cmake",
-                "Qt5WebEngine",
-                "Qt5WebEngineConfig.cmake"
+                "Qt6WebEngineQuick",
+                "Qt6WebEngineQuickConfig.cmake"
               )
             )
           },
           {
             name: "Qt Declarative",
-            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt5_5141/qt.qt5.5141.clang_64/5.14.1-0-202001241000qtdeclarative-MacOS-MacOS_10_13-Clang-MacOS-MacOS_10_13-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_641/qt.qt6.641.clang_64/6.4.1-0-202211101256qtdeclarative-MacOS-MacOS_12-Clang-MacOS-MacOS_12-X86_64-ARM64.7z`,
             skipSetup: checkIfExists(path.resolve(qtHome, "bin", "qmlmin"))
           },
           {
             name: "Qt WebChannel",
-            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt5_5141/qt.qt5.5141.clang_64/5.14.1-0-202001241000qtwebchannel-MacOS-MacOS_10_13-Clang-MacOS-MacOS_10_13-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_641/qt.qt6.641.addons.qtwebchannel.clang_64/6.4.1-0-202211101256qtwebchannel-MacOS-MacOS_12-Clang-MacOS-MacOS_12-X86_64-ARM64.7z`,
             skipSetup: checkIfExists(
               path.resolve(
                 qtHome,
                 "lib",
                 "cmake",
-                "Qt5WebChannel",
-                "Qt5WebChannelConfig.cmake"
+                "Qt6WebChannel",
+                "Qt6WebChannelConfig.cmake"
               )
             )
           },
+          {
+            name: "Qt Positioning",
+            link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_641/qt.qt6.641.addons.qtpositioning.clang_64/6.4.1-0-202211101256qtpositioning-MacOS-MacOS_12-Clang-MacOS-MacOS_12-X86_64-ARM64.7z`,
+            skipSetup: checkIfExists(
+              path.resolve(
+                qtHome,
+                "lib",
+                "cmake",
+                "Qt6Positioning",
+                "Qt6Positioning.cmake"
+              )
+            )
+          }/*,
           {
             name: "Qt Location",
             link: `https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt5_5141/qt.qt5.5141.clang_64/5.14.1-0-202001241000qtlocation-MacOS-MacOS_10_13-Clang-MacOS-MacOS_10_13-X86_64.7z`,
@@ -68,7 +81,7 @@ function getMiniQtWebviewArtifacts() {
                 "Qt5LocationConfig.cmake"
               )
             )
-          }
+          }*/
         ]
       };
     }
@@ -77,36 +90,43 @@ function getMiniQtWebviewArtifacts() {
         artifacts: [
           {
             name: "Qt WebEngine",
-            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt5_5141/qt.qt5.5141.qtwebengine.win64_msvc2017_64/5.14.1-0-202001240957qtwebengine-Windows-Windows_10-MSVC2017-Windows-Windows_10-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_641/qt.qt6.641.addons.qtwebengine.win64_msvc2019_64/6.4.1-0-202211101254qtwebengine-Windows-Windows_10_21H2-MSVC2019-Windows-Windows_10_21H2-X86_64.7z`,
             skipSetup: checkIfExists(
               path.resolve(
                 qtHome,
                 "lib",
                 "cmake",
-                "Qt5WebEngine",
-                "Qt5WebEngineConfig.cmake"
+                "Qt6WebEngineQuick",
+                "Qt6WebEngineQuickConfig.cmake"
               )
             )
           },
           {
             name: "Qt Declarative",
-            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt5_5141/qt.qt5.5141.win64_msvc2017_64/5.14.1-0-202001240957qtdeclarative-Windows-Windows_10-MSVC2017-Windows-Windows_10-X86_64.7z`,
-            skipSetup: checkIfExists(path.resolve(qtHome, "bin", "Qt5Qml.dll"))
+            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_641/qt.qt6.641.win64_msvc2019_64/6.4.1-0-202211101254qtdeclarative-Windows-Windows_10_21H2-MSVC2019-Windows-Windows_10_21H2-X86_64.7z`,
+            skipSetup: checkIfExists(path.resolve(qtHome, "bin", "Qt6Qml.dll"))
           },
           {
             name: "Qt WebChannel",
-            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt5_5141/qt.qt5.5141.win64_msvc2017_64/5.14.1-0-202001240957qtwebchannel-Windows-Windows_10-MSVC2017-Windows-Windows_10-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_641/qt.qt6.641.addons.qtwebchannel.win64_msvc2019_64/6.4.1-0-202211101254qtwebchannel-Windows-Windows_10_21H2-MSVC2019-Windows-Windows_10_21H2-X86_64.7z`,
             skipSetup: checkIfExists(
-              path.resolve(qtHome, "bin", "Qt5WebChannel.dll")
+              path.resolve(qtHome, "bin", "Qt6WebChannel.dll")
             )
           },
+          {
+            name: "Qt Positioning",
+            link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_641/qt.qt6.641.addons.qtpositioning.win64_msvc2019_64/6.4.1-0-202211101254qtpositioning-Windows-Windows_10_21H2-MSVC2019-Windows-Windows_10_21H2-X86_64.7z`,
+            skipSetup: checkIfExists(
+              path.resolve(qtHome, "bin", "Qt6Positioning.dll")
+            )
+          }/*,
           {
             name: "Qt Location",
             link: `https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt5_5141/qt.qt5.5141.win64_msvc2017_64/5.14.1-0-202001240957qtlocation-Windows-Windows_10-MSVC2017-Windows-Windows_10-X86_64.7z`,
             skipSetup: checkIfExists(
               path.resolve(qtHome, "bin", "Qt5Location.dll")
             )
-          }
+          }*/
         ]
       };
     }
@@ -115,29 +135,42 @@ function getMiniQtWebviewArtifacts() {
         artifacts: [
           {
             name: "Qt WebEngine",
-            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt5_5141/qt.qt5.5141.qtwebengine.gcc_64/5.14.1-0-202001240953qtwebengine-Linux-RHEL_7_6-GCC-Linux-RHEL_7_6-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt6_641/qt.qt6.641.addons.qtwebengine.gcc_64/6.4.1-0-202211101305qtwebengine-Linux-RHEL_8_4-GCC-Linux-RHEL_8_4-X86_64.7z`,
             skipSetup: checkIfExists(
-              path.resolve(qtHome, "bin", "Qt5Location.dll")
+              path.resolve(qtHome, "bin", "Qt6Location.dll")
             )
           },
           {
             name: "Qt Declarative",
-            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt5_5141/qt.qt5.5141.gcc_64/5.14.1-0-202001240953qtdeclarative-Linux-RHEL_7_6-GCC-Linux-RHEL_7_6-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt6_641/qt.qt6.641.gcc_64/6.4.1-0-202211101305qtdeclarative-Linux-RHEL_8_4-GCC-Linux-RHEL_8_4-X86_64.7z`,
             skipSetup: checkIfExists(path.resolve(qtHome, "bin", "qmlmin"))
           },
           {
             name: "Qt WebChannel",
-            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt5_5141/qt.qt5.5141.gcc_64/5.14.1-0-202001240953qtwebchannel-Linux-RHEL_7_6-GCC-Linux-RHEL_7_6-X86_64.7z`,
+            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt6_641/qt.qt6.641.addons.qtwebchannel.gcc_64/6.4.1-0-202211101305qtwebchannel-Linux-RHEL_8_4-GCC-Linux-RHEL_8_4-X86_64.7z`,
             skipSetup: checkIfExists(
               path.resolve(
                 qtHome,
                 "lib",
                 "cmake",
-                "Qt5WebChannel",
-                "Qt5WebChannelConfig.cmake"
+                "Qt6WebChannel",
+                "Qt6WebChannelConfig.cmake"
               )
             )
           },
+          {
+            name: "Qt Positioning",
+            link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt6_641/qt.qt6.641.addons.qtpositioning.gcc_64/6.4.1-0-202211101305qtpositioning-Linux-RHEL_8_4-GCC-Linux-RHEL_8_4-X86_64.7z`,
+            skipSetup: checkIfExists(
+              path.resolve(
+                qtHome,
+                "lib",
+                "cmake",
+                "Qt6Positioning",
+                "Qt6PositioningConfig.cmake"
+              )
+            )
+          }/*,
           {
             name: "Qt Location",
             link: `https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/qt5_5141/qt.qt5.5141.gcc_64/5.14.1-0-202001240953qtlocation-Linux-RHEL_7_6-GCC-Linux-RHEL_7_6-X86_64.7z`,
@@ -150,7 +183,7 @@ function getMiniQtWebviewArtifacts() {
                 "Qt5LocationConfig.cmake"
               )
             )
-          }
+          }*/
         ]
       };
     }
