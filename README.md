@@ -1,16 +1,15 @@
-# NodeGui Webview plugin - QT6 [WIP]
+# NodeGui Webview plugin - Qt6
 
-This is a modified version of the original NodeGui Webview plugin example, updated to work with QT 6.4.1.
-I don't really know much about QT, C/C++ build chains, etcetera, but I think I do know enough to make this work for me.
-The current version is a little hacky here and there, but it compiles and runs for me on Windows. Next step is figuring out how to use it in another project.
+This is a modified version of the original NodeGui Webview plugin example, updated to work with NodeGui 0.6 and Qt 6.4.1.
+I don't really know much about Qt, C/C++ build chains, etcetera, but I think I do know enough to make this work for me.
+The current version is a little hacky here and there, but it compiles and runs for me on Windows.
+
+Easiest way to actually use the plugin:
+
+1. install in your main project from npm: `npm install @aiorosdev/nodegui-plugin-webview`
+2. import the module, for example: `import { QWebEngineView, QWebChannel } from "@aiorosdev/nodegui-plugin-webview"`
+
 Any suggestions are welcome.
-
-----------------
-
-Start with `demo.ts` to understand how it all works.
-
-More details soon.
-
 
 Demo:
 
