@@ -1,8 +1,9 @@
 {
-  "name": "nodegui-plugin-webview",
-  "version": "1.2.0",
+  "name": "@aiorosdev/nodegui-plugin-webview",
+  "version": "1.2.1",
   "description": "Webview plugin for NodeGui",
   "main": "dist/index.js",
+  "private": false,
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "cross-env tsc && npm run build:addon",
@@ -10,10 +11,10 @@
     "dev": "cross-env npm run build && qode dist/demo.js",
     "postinstall": "node ./scripts/install.js && npm run build:addon"
   },
-  "author": "Atul R",
+  "author": "Aioros",
   "license": "MIT",
   "peerDependencies": {
-    "@nodegui/nodegui": "^0.66.0"
+    "@nodegui/nodegui": ">=0.62.0"
   },
   "dependencies": {
     "@nodegui/artifact-installer": "^1.1.0",
